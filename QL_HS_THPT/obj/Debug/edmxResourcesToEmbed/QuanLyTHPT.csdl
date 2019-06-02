@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_GV_HS_THPTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblGiangday">
+    <Key>
+      <PropertyRef Name="MaLop" />
+      <PropertyRef Name="Thu" />
+      <PropertyRef Name="Tietday" />
+    </Key>
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Thu" Type="Int32" Nullable="false" />
+    <Property Name="Tietday" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblGiaovien" Relationship="Self.FK_tblGiangday_tblGiaovien" FromRole="tblGiangday" ToRole="tblGiaovien" />
+    <NavigationProperty Name="tblLop" Relationship="Self.FK_tblGiangday_tblLop" FromRole="tblGiangday" ToRole="tblLop" />
+  </EntityType>
+  <EntityType Name="tblGiaovien">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenGV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GT" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Luong" Type="Int32" />
+    <Property Name="MaMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblGiangday" Relationship="Self.FK_tblGiangday_tblGiaovien" FromRole="tblGiaovien" ToRole="tblGiangday" />
+    <NavigationProperty Name="tblMonhoc" Relationship="Self.FK_tblGiaoVien_tblMonHoc" FromRole="tblGiaovien" ToRole="tblMonhoc" />
+    <NavigationProperty Name="tblLop" Relationship="Self.FK_tblLop_tblGiaoVien" FromRole="tblGiaovien" ToRole="tblLop" />
+  </EntityType>
+  <EntityType Name="tblHocSinh">
+    <Key>
+      <PropertyRef Name="MaHS" />
+    </Key>
+    <Property Name="MaHS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenHS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GT" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DanToc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TonGiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tblLop" Relationship="Self.FK_tblHocSinh_tblLop" FromRole="tblHocSinh" ToRole="tblLop" />
+  </EntityType>
+  <EntityType Name="tblLop">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GVCN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblGiangday" Relationship="Self.FK_tblGiangday_tblLop" FromRole="tblLop" ToRole="tblGiangday" />
+    <NavigationProperty Name="tblGiaovien" Relationship="Self.FK_tblLop_tblGiaoVien" FromRole="tblLop" ToRole="tblGiaovien" />
+    <NavigationProperty Name="tblHocSinh" Relationship="Self.FK_tblHocSinh_tblLop" FromRole="tblLop" ToRole="tblHocSinh" />
+  </EntityType>
+  <EntityType Name="tblMonhoc">
+    <Key>
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblGiaovien" Relationship="Self.FK_tblGiaoVien_tblMonHoc" FromRole="tblMonhoc" ToRole="tblGiaovien" />
+  </EntityType>
+  <EntityType Name="tblPhanquyen">
+    <Key>
+      <PropertyRef Name="Quyen" />
+    </Key>
+    <Property Name="Quyen" Type="Int32" Nullable="false" />
+    <Property Name="TenQuyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblUser" Relationship="Self.FK_tblUser_tblPhanQuyen" FromRole="tblPhanquyen" ToRole="tblUser" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Quyen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblPhanquyen" Relationship="Self.FK_tblUser_tblPhanQuyen" FromRole="tblUser" ToRole="tblPhanquyen" />
+  </EntityType>
+  <Association Name="FK_tblGiangday_tblGiaovien">
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="1" />
+    <End Role="tblGiangday" Type="Self.tblGiangday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiaovien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="tblGiangday">
+        <PropertyRef Name="MaGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGiangday_tblLop">
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="1" />
+    <End Role="tblGiangday" Type="Self.tblGiangday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="tblGiangday">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGiaoVien_tblMonHoc">
+    <End Role="tblMonhoc" Type="Self.tblMonhoc" Multiplicity="1" />
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMonhoc">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="tblGiaovien">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLop_tblGiaoVien">
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="0..1" />
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiaovien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="tblLop">
+        <PropertyRef Name="GVCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHocSinh_tblLop">
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="1" />
+    <End Role="tblHocSinh" Type="Self.tblHocSinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="tblHocSinh">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUser_tblPhanQuyen">
+    <End Role="tblPhanquyen" Type="Self.tblPhanquyen" Multiplicity="1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhanquyen">
+        <PropertyRef Name="Quyen" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="Quyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_GV_HS_THPTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tblGiangday" EntityType="Self.tblGiangday" />
+    <EntitySet Name="tblGiaovien" EntityType="Self.tblGiaovien" />
+    <EntitySet Name="tblHocSinh" EntityType="Self.tblHocSinh" />
+    <EntitySet Name="tblLop" EntityType="Self.tblLop" />
+    <EntitySet Name="tblMonhoc" EntityType="Self.tblMonhoc" />
+    <EntitySet Name="tblPhanquyen" EntityType="Self.tblPhanquyen" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" />
+    <AssociationSet Name="FK_tblGiangday_tblGiaovien" Association="Self.FK_tblGiangday_tblGiaovien">
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+      <End Role="tblGiangday" EntitySet="tblGiangday" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGiangday_tblLop" Association="Self.FK_tblGiangday_tblLop">
+      <End Role="tblLop" EntitySet="tblLop" />
+      <End Role="tblGiangday" EntitySet="tblGiangday" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGiaoVien_tblMonHoc" Association="Self.FK_tblGiaoVien_tblMonHoc">
+      <End Role="tblMonhoc" EntitySet="tblMonhoc" />
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLop_tblGiaoVien" Association="Self.FK_tblLop_tblGiaoVien">
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+      <End Role="tblLop" EntitySet="tblLop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHocSinh_tblLop" Association="Self.FK_tblHocSinh_tblLop">
+      <End Role="tblLop" EntitySet="tblLop" />
+      <End Role="tblHocSinh" EntitySet="tblHocSinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUser_tblPhanQuyen" Association="Self.FK_tblUser_tblPhanQuyen">
+      <End Role="tblPhanquyen" EntitySet="tblPhanquyen" />
+      <End Role="tblUser" EntitySet="tblUser" />
+    </AssociationSet>
+    <FunctionImport Name="GetAllHS" ReturnType="Collection(QL_GV_HS_THPTModel.GetAllHS_Result)" />
+    <FunctionImport Name="GetAllUser" ReturnType="Collection(QL_GV_HS_THPTModel.GetAllUser_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QL_GV_HS_THPTModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QL_GV_HS_THPTModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ThayDoi">
+      <Parameter Name="Ma" Mode="In" Type="String" />
+      <Parameter Name="Ten" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="Boolean" />
+      <Parameter Name="Ngaysinh" Mode="In" Type="DateTime" />
+      <Parameter Name="Malop" Mode="In" Type="String" />
+      <Parameter Name="Dantoc" Mode="In" Type="String" />
+      <Parameter Name="Tongiao" Mode="In" Type="String" />
+      <Parameter Name="Diachi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ThemHS1">
+      <Parameter Name="Ma" Mode="In" Type="String" />
+      <Parameter Name="Ten" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="Ngaysinh" Mode="In" Type="DateTime" />
+      <Parameter Name="Malop" Mode="In" Type="String" />
+      <Parameter Name="Dantoc" Mode="In" Type="String" />
+      <Parameter Name="Tongiao" Mode="In" Type="String" />
+      <Parameter Name="Diachi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SP_XoaHS">
+      <Parameter Name="Ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SuaChiTietDiem">
+      <Parameter Name="mahs" Mode="In" Type="String" />
+      <Parameter Name="mamh" Mode="In" Type="String" />
+      <Parameter Name="hocky" Mode="In" Type="Int32" />
+      <Parameter Name="diemhs1" Mode="In" Type="Double" />
+      <Parameter Name="diemhs2" Mode="In" Type="Double" />
+      <Parameter Name="diemhs3" Mode="In" Type="Double" />
+      <Parameter Name="diemtb" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemChiTietDiem">
+      <Parameter Name="mahs" Mode="In" Type="String" />
+      <Parameter Name="mamh" Mode="In" Type="String" />
+      <Parameter Name="hocky" Mode="In" Type="Int32" />
+      <Parameter Name="diemhs1" Mode="In" Type="Double" />
+      <Parameter Name="diemhs2" Mode="In" Type="Double" />
+      <Parameter Name="diemhs3" Mode="In" Type="Double" />
+      <Parameter Name="diemtb" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="XoaChiTietDiem">
+      <Parameter Name="mahs" Mode="In" Type="String" />
+      <Parameter Name="mamh" Mode="In" Type="String" />
+      <Parameter Name="hocky" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="XOAGIAOVIEN">
+      <Parameter Name="MaGV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemHS">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+      <Parameter Name="TenHS" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="DanToc" Mode="In" Type="String" />
+      <Parameter Name="TonGiao" Mode="In" Type="String" />
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Them_HS">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+      <Parameter Name="TenHS" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="DanToc" Mode="In" Type="String" />
+      <Parameter Name="TonGiao" Mode="In" Type="String" />
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SuaHS">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+      <Parameter Name="TenHS" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="DanToc" Mode="In" Type="String" />
+      <Parameter Name="TonGiao" Mode="In" Type="String" />
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Xoa">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sua_HS">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+      <Parameter Name="TenHS" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="DanToc" Mode="In" Type="String" />
+      <Parameter Name="TonGiao" Mode="In" Type="String" />
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllGV" ReturnType="Collection(QL_GV_HS_THPTModel.GetAllGV_Result)" />
+    <FunctionImport Name="GetHSBySearch" ReturnType="Collection(QL_GV_HS_THPTModel.GetHSBySearch_Result)">
+      <Parameter Name="MaHS" Mode="In" Type="String" />
+      <Parameter Name="Ten" Mode="In" Type="String" />
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SuaGV">
+      <Parameter Name="MaGV" Mode="In" Type="String" />
+      <Parameter Name="TenGV" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="SDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Luong" Mode="In" Type="Int32" />
+      <Parameter Name="MaMon" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemGV">
+      <Parameter Name="MaGV" Mode="In" Type="String" />
+      <Parameter Name="TenGV" Mode="In" Type="String" />
+      <Parameter Name="GT" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="SDT" Mode="In" Type="String" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="Luong" Mode="In" Type="Int32" />
+      <Parameter Name="MaMon" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="XoaGV">
+      <Parameter Name="MaGV" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAllHS_Result">
+    <Property Type="String" Name="MaHS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenHS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GT" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DanToc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TonGiao" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaLop" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetAllUser_Result">
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MaGV" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Quyen" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetAllGV_Result">
+    <Property Type="String" Name="MaGV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenGV" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GT" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Luong" Nullable="true" />
+    <Property Type="String" Name="MaMon" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetHSBySearch_Result">
+    <Property Type="String" Name="MaHS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenHS" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GT" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="NgaySinh" Nullable="true" />
+    <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DanToc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TonGiao" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaLop" Nullable="false" MaxLength="10" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BE56C2C-89CE-4B19-8E24-DDFF6F66F67E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QL_HS_THPT</RootNamespace>
+    <AssemblyName>QL_HS_THPT</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>C:\Users\MinhNgoc\Downloads\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\QL_GiangDay.cs" />
+    <Compile Include="DanhSachHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachHS.Designer.cs">
+      <DependentUpon>DanhSachHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllGV_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllHS_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllUser_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHSBySearch_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phân Công Giảng Dạy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phân Công Giảng Dạy.Designer.cs">
+      <DependentUpon>Phân Công Giảng Dạy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QL_HS_GV_THPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL_HS_GV_THPT.Designer.cs">
+      <DependentUpon>QL_HS_GV_THPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTHPT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyTHPT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTHPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTHPT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyTHPT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Quản Lý Giáo Viên.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản Lý Giáo Viên.Designer.cs">
+      <DependentUpon>Quản Lý Giáo Viên.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý học sinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý học sinh.Designer.cs">
+      <DependentUpon>Quản lý học sinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản lý người dùng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lý người dùng.Designer.cs">
+      <DependentUpon>Quản lý người dùng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGiangday.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGiaovien.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHocSinh.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLop.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMonhoc.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPhanquyen.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>QuanLyTHPT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Thời Khóa Biểu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thời Khóa Biểu.Designer.cs">
+      <DependentUpon>Thời Khóa Biểu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DanhSachHS.resx">
+      <DependentUpon>DanhSachHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phân Công Giảng Dạy.resx">
+      <DependentUpon>Phân Công Giảng Dạy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QL_HS_GV_THPT.resx">
+      <DependentUpon>QL_HS_GV_THPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản Lý Giáo Viên.resx">
+      <DependentUpon>Quản Lý Giáo Viên.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý học sinh.resx">
+      <DependentUpon>Quản lý học sinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản lý người dùng.resx">
+      <DependentUpon>Quản lý người dùng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thời Khóa Biểu.resx">
+      <DependentUpon>Thời Khóa Biểu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QuanLyTHPT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyTHPT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyTHPT.edmx.diagram">
+      <DependentUpon>QuanLyTHPT.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLyTHPT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuanLyTHPT.Context.cs</LastGenOutput>
+      <DependentUpon>QuanLyTHPT.edmx</DependentUpon>
+    </Content>
+    <Content Include="QuanLyTHPT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyTHPT.edmx</DependentUpon>
+      <LastGenOutput>QuanLyTHPT.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

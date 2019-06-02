@@ -1,0 +1,81 @@
+C:\Users\MinhNgoc\Downloads\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe
+C:\Users\MinhNgoc\Downloads\QL_HS_THPT\QL_HS_THPT\bin\Debug\Dapper.dll
+C:\Users\MinhNgoc\Downloads\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.dll
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csprojAssemblyReference.cache
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.formLoGin.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Phân_Công_Giảng_Dạy.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Properties.Resources.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.QL_HS_GV_THPT.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_Lý_Giáo_Viên.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_học_sinh.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_người_dùng.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Thời_Khóa_Biểu.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.GenerateResource.cache
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.CoreCompileInputs.cache
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe.config
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.pdb
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\Dapper.dll
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.dll
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.dll
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.dll
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.xml
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.xml
+E:\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.xml
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.CopyComplete
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.exe
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.pdb
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.DanhSachHS.resources
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\Interop.Microsoft.Office.Interop.Excel.dll
+E:\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe.config
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.DanhSachHS.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.formLoGin.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Phân_Công_Giảng_Dạy.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.QL_HS_GV_THPT.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_Lý_Giáo_Viên.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_học_sinh.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_người_dùng.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Thời_Khóa_Biểu.resources
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\forWinform\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.GenerateResource.Cache
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe.config
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.exe
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\QL_HS_THPT.pdb
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\Dapper.dll
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.dll
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.dll
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.dll
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.xml
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\EntityFramework.SqlServer.xml
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\bin\Debug\itextsharp.xml
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csprojAssemblyReference.cache
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\Interop.Microsoft.Office.Interop.Excel.dll
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.ResolveComReference.cache
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.DanhSachHS.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.formLoGin.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Phân_Công_Giảng_Dạy.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Properties.Resources.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.QL_HS_GV_THPT.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_Lý_Giáo_Viên.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_học_sinh.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Quản_lý_người_dùng.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.Thời_Khóa_Biểu.resources
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.GenerateResource.cache
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.CoreCompileInputs.cache
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.csproj.CopyComplete
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.exe
+F:\QL_HS_THPT\QL_HS_THPT\QL_HS_THPT\obj\Debug\QL_HS_THPT.pdb

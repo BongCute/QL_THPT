@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_GV_HS_THPTModelStoreContainer" CdmEntityContainer="QL_GV_HS_THPTEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGiangday">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblGiangday">
+        <MappingFragment StoreEntitySet="tblGiangday">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="Thu" ColumnName="Thu" />
+          <ScalarProperty Name="Tietday" ColumnName="Tietday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGiaovien">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblGiaovien">
+        <MappingFragment StoreEntitySet="tblGiaovien">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHocSinh">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblHocSinh">
+        <MappingFragment StoreEntitySet="tblHocSinh">
+          <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+          <ScalarProperty Name="TenHS" ColumnName="TenHS" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLop">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblLop">
+        <MappingFragment StoreEntitySet="tblLop">
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+          <ScalarProperty Name="GVCN" ColumnName="GVCN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMonhoc">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblMonhoc">
+        <MappingFragment StoreEntitySet="tblMonhoc">
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPhanquyen">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblPhanquyen">
+        <MappingFragment StoreEntitySet="tblPhanquyen">
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+          <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUser">
+      <EntityTypeMapping TypeName="QL_GV_HS_THPTModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllHS" FunctionName="QL_GV_HS_THPTModel.Store.GetAllHS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QL_GV_HS_THPTModel.GetAllHS_Result">
+          <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+          <ScalarProperty Name="TenHS" ColumnName="TenHS" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QL_GV_HS_THPTModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QL_GV_HS_THPTModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QL_GV_HS_THPTModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QL_GV_HS_THPTModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QL_GV_HS_THPTModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QL_GV_HS_THPTModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QL_GV_HS_THPTModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QL_GV_HS_THPTModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="SP_ThayDoi" FunctionName="QL_GV_HS_THPTModel.Store.SP_ThayDoi" />
+    <FunctionImportMapping FunctionImportName="SP_ThemHS1" FunctionName="QL_GV_HS_THPTModel.Store.SP_ThemHS1" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QL_GV_HS_THPTModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SP_XoaHS" FunctionName="QL_GV_HS_THPTModel.Store.SP_XoaHS" />
+    <FunctionImportMapping FunctionImportName="SuaChiTietDiem" FunctionName="QL_GV_HS_THPTModel.Store.SuaChiTietDiem" />
+    <FunctionImportMapping FunctionImportName="ThemChiTietDiem" FunctionName="QL_GV_HS_THPTModel.Store.ThemChiTietDiem" />
+    <FunctionImportMapping FunctionImportName="XoaChiTietDiem" FunctionName="QL_GV_HS_THPTModel.Store.XoaChiTietDiem" />
+    <FunctionImportMapping FunctionImportName="XOAGIAOVIEN" FunctionName="QL_GV_HS_THPTModel.Store.XOAGIAOVIEN" />
+    <FunctionImportMapping FunctionImportName="ThemHS" FunctionName="QL_GV_HS_THPTModel.Store.ThemHS" />
+    <FunctionImportMapping FunctionImportName="Them_HS" FunctionName="QL_GV_HS_THPTModel.Store.Them_HS" />
+    <FunctionImportMapping FunctionImportName="SuaHS" FunctionName="QL_GV_HS_THPTModel.Store.SuaHS" />
+    <FunctionImportMapping FunctionImportName="Xoa" FunctionName="QL_GV_HS_THPTModel.Store.Xoa" />
+    <FunctionImportMapping FunctionImportName="Sua_HS" FunctionName="QL_GV_HS_THPTModel.Store.Sua_HS" />
+    <FunctionImportMapping FunctionImportName="GetAllGV" FunctionName="QL_GV_HS_THPTModel.Store.GetAllGV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QL_GV_HS_THPTModel.GetAllGV_Result">
+          <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+          <ScalarProperty Name="TenGV" ColumnName="TenGV" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHSBySearch" FunctionName="QL_GV_HS_THPTModel.Store.GetHSBySearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QL_GV_HS_THPTModel.GetHSBySearch_Result">
+          <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+          <ScalarProperty Name="TenHS" ColumnName="TenHS" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SuaGV" FunctionName="QL_GV_HS_THPTModel.Store.SuaGV" />
+    <FunctionImportMapping FunctionImportName="ThemGV" FunctionName="QL_GV_HS_THPTModel.Store.ThemGV" />
+    <FunctionImportMapping FunctionImportName="XoaGV" FunctionName="QL_GV_HS_THPTModel.Store.XoaGV" />
+  </EntityContainerMapping>
+</Mapping>

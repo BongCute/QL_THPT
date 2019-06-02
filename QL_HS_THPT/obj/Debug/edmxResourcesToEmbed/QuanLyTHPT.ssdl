@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_GV_HS_THPTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblGiangday">
+    <Key>
+      <PropertyRef Name="MaLop" />
+      <PropertyRef Name="Thu" />
+      <PropertyRef Name="Tietday" />
+    </Key>
+    <Property Name="MaGV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Thu" Type="int" Nullable="false" />
+    <Property Name="Tietday" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblGiaovien">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenGV" Type="nvarchar" MaxLength="50" />
+    <Property Name="GT" Type="nvarchar" MaxLength="3" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Luong" Type="int" />
+    <Property Name="MaMon" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHocSinh">
+    <Key>
+      <PropertyRef Name="MaHS" />
+    </Key>
+    <Property Name="MaHS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenHS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GT" Type="nvarchar" MaxLength="3" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="TonGiao" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLop">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="50" />
+    <Property Name="GVCN" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblMonhoc">
+    <Key>
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaMon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblPhanquyen">
+    <Key>
+      <PropertyRef Name="Quyen" />
+    </Key>
+    <Property Name="Quyen" Type="int" Nullable="false" />
+    <Property Name="TenQuyen" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaGV" Type="varchar" MaxLength="10" />
+    <Property Name="Quyen" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblGiangday_tblGiaovien">
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="1" />
+    <End Role="tblGiangday" Type="Self.tblGiangday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiaovien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="tblGiangday">
+        <PropertyRef Name="MaGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGiangday_tblLop">
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="1" />
+    <End Role="tblGiangday" Type="Self.tblGiangday" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="tblGiangday">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblGiaoVien_tblMonHoc">
+    <End Role="tblMonhoc" Type="Self.tblMonhoc" Multiplicity="1" />
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMonhoc">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="tblGiaovien">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHocSinh_tblLop">
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="1" />
+    <End Role="tblHocSinh" Type="Self.tblHocSinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="tblHocSinh">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLop_tblGiaoVien">
+    <End Role="tblGiaovien" Type="Self.tblGiaovien" Multiplicity="0..1" />
+    <End Role="tblLop" Type="Self.tblLop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGiaovien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="tblLop">
+        <PropertyRef Name="GVCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUser_tblPhanQuyen">
+    <End Role="tblPhanquyen" Type="Self.tblPhanquyen" Multiplicity="1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhanquyen">
+        <PropertyRef Name="Quyen" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="Quyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetAllGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllHS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetHSBySearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="varchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaLop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_ThayDoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="varchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="bit" Mode="In" />
+    <Parameter Name="Ngaysinh" Type="date" Mode="In" />
+    <Parameter Name="Malop" Type="varchar" Mode="In" />
+    <Parameter Name="Dantoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tongiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="Diachi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_ThemHS1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="varchar" Mode="In" />
+    <Parameter Name="Ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ngaysinh" Type="date" Mode="In" />
+    <Parameter Name="Malop" Type="varchar" Mode="In" />
+    <Parameter Name="Dantoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="Tongiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="Diachi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_XoaHS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ma" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sua_HS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaLop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SuaChiTietDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahs" Type="varchar" Mode="In" />
+    <Parameter Name="mamh" Type="varchar" Mode="In" />
+    <Parameter Name="hocky" Type="int" Mode="In" />
+    <Parameter Name="diemhs1" Type="float" Mode="In" />
+    <Parameter Name="diemhs2" Type="float" Mode="In" />
+    <Parameter Name="diemhs3" Type="float" Mode="In" />
+    <Parameter Name="diemtb" Type="float" Mode="In" />
+  </Function>
+  <Function Name="SuaGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaGV" Type="varchar" Mode="In" />
+    <Parameter Name="TenGV" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="SDT" Type="varchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Luong" Type="int" Mode="In" />
+    <Parameter Name="MaMon" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SuaHS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaLop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Them_HS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaLop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ThemChiTietDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahs" Type="varchar" Mode="In" />
+    <Parameter Name="mamh" Type="varchar" Mode="In" />
+    <Parameter Name="hocky" Type="int" Mode="In" />
+    <Parameter Name="diemhs1" Type="float" Mode="In" />
+    <Parameter Name="diemhs2" Type="float" Mode="In" />
+    <Parameter Name="diemhs3" Type="float" Mode="In" />
+    <Parameter Name="diemtb" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ThemGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaGV" Type="varchar" Mode="In" />
+    <Parameter Name="TenGV" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="SDT" Type="varchar" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Luong" Type="int" Mode="In" />
+    <Parameter Name="MaMon" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ThemHS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenHS" Type="nvarchar" Mode="In" />
+    <Parameter Name="GT" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="date" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaLop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Xoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHS" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="XoaChiTietDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahs" Type="varchar" Mode="In" />
+    <Parameter Name="mamh" Type="varchar" Mode="In" />
+    <Parameter Name="hocky" Type="int" Mode="In" />
+  </Function>
+  <Function Name="XOAGIAOVIEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaGV" Type="char" Mode="In" />
+  </Function>
+  <Function Name="XoaGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaGV" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="QL_GV_HS_THPTModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGiangday" EntityType="Self.tblGiangday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGiaovien" EntityType="Self.tblGiaovien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHocSinh" EntityType="Self.tblHocSinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLop" EntityType="Self.tblLop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMonhoc" EntityType="Self.tblMonhoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPhanquyen" EntityType="Self.tblPhanquyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblGiangday_tblGiaovien" Association="Self.FK_tblGiangday_tblGiaovien">
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+      <End Role="tblGiangday" EntitySet="tblGiangday" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGiangday_tblLop" Association="Self.FK_tblGiangday_tblLop">
+      <End Role="tblLop" EntitySet="tblLop" />
+      <End Role="tblGiangday" EntitySet="tblGiangday" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblGiaoVien_tblMonHoc" Association="Self.FK_tblGiaoVien_tblMonHoc">
+      <End Role="tblMonhoc" EntitySet="tblMonhoc" />
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHocSinh_tblLop" Association="Self.FK_tblHocSinh_tblLop">
+      <End Role="tblLop" EntitySet="tblLop" />
+      <End Role="tblHocSinh" EntitySet="tblHocSinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLop_tblGiaoVien" Association="Self.FK_tblLop_tblGiaoVien">
+      <End Role="tblGiaovien" EntitySet="tblGiaovien" />
+      <End Role="tblLop" EntitySet="tblLop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUser_tblPhanQuyen" Association="Self.FK_tblUser_tblPhanQuyen">
+      <End Role="tblPhanquyen" EntitySet="tblPhanquyen" />
+      <End Role="tblUser" EntitySet="tblUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
